@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ブレヒロ マーケット価格シミュレータ</title>
+    <title>マーケット価格シミュレータ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>ブレヒロ マーケット価格シミュレータ</h1>
+        <h1>マーケット価格シミュレータ</h1>
 
-        <div class="input-section">
+        <div class="input-section common-inputs">
+            <h2>基本情報</h2>
             <label for="startDate">取引開始日時:</label>
             <input type="datetime-local" id="startDate" required>
 
@@ -21,32 +22,40 @@
             <input type="number" id="endPrice" min="0" required>
         </div>
 
-        <hr> <h2>価格から時間を予測</h2>
-        <div class="input-section">
-            <label for="currentPriceTime">現在の価格 (BPC):</label>
-            <input type="number" id="currentPriceTime" min="0" required>
+        <hr>
 
-            <label for="targetPriceTime">目標価格 (BPC):</label>
-            <input type="number" id="targetPriceTime" min="0" required>
+        <div class="calculation-section" id="priceToTimeSection">
+            <h2>価格から時間を予測</h2>
+            <div class="input-section">
+                <label for="currentPriceTime">現在の価格 (BPC):</label>
+                <input type="number" id="currentPriceTime" min="0" required>
 
-            <button onclick="calculateTimeToPrice()">目標価格到達時間を計算</button>
+                <label for="targetPriceTime">目標価格 (BPC):</label>
+                <input type="number" id="targetPriceTime" min="0" required>
+
+                <button onclick="calculateTimeToPrice()">目標価格到達時間を計算</button>
+            </div>
+            <div class="output-section">
+                <p>取引終了日時: <span id="predictedEndTime"></span></p>
+                <p>目標価格到達予測日時: <span id="targetReachTime"></span></p>
+                <p id="messageTime" class="message"></p>
+            </div>
         </div>
-        <div class="output-section">
-            <p>取引終了日時: <span id="predictedEndTime"></span></p>
-            <p>目標価格到達予測日時: <span id="targetReachTime"></span></p>
-            <p id="messageTime" class="message"></p>
-        </div>
 
-        <hr> <h2>時間を指定して価格を予測</h2>
-        <div class="input-section">
-            <label for="predictDateTime">予測したい日時:</label>
-            <input type="datetime-local" id="predictDateTime" required>
+        <hr>
 
-            <button onclick="calculatePriceAtTime()">指定日時の価格を計算</button>
-        </div>
-        <div class="output-section">
-            <p>指定日時での予測価格: <span id="predictedPriceAtTime"></span></p>
-            <p id="messagePrice" class="message"></p>
+        <div class="calculation-section" id="timeToPriceSection">
+            <h2>時間を指定して価格を予測</h2>
+            <div class="input-section">
+                <label for="predictDateTime">予測したい日時:</label>
+                <input type="datetime-local" id="predictDateTime" required>
+
+                <button onclick="calculatePriceAtTime()">指定日時の価格を計算</button>
+            </div>
+            <div class="output-section">
+                <p>指定日時での予測価格: <span id="predictedPriceAtTime"></span></p>
+                <p id="messagePrice" class="message"></p>
+            </div>
         </div>
     </div>
 
