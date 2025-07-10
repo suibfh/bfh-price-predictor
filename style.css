@@ -54,9 +54,8 @@ button:hover {
 }
 
 .output-section {
-    margin-top: 20px; /* Adjust margin-top for better spacing */
+    margin-top: 20px;
     padding-top: 10px;
-    /* border-top: 1px solid #eee; */ /* Remove border-top as hr is used */
 }
 
 .output-section p {
@@ -73,13 +72,33 @@ button:hover {
     color: red;
     font-weight: bold;
     text-align: center;
-    margin-top: 10px; /* Add margin-top for messages */
+    margin-top: 10px;
 }
 
-/* Add style for horizontal rule */
 hr {
     border: 0;
     height: 1px;
     background: #eee;
     margin: 30px 0;
+}
+
+/* セクションごとの色分け */
+.calculation-section {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+#priceToTimeSection {
+    background-color: #e6f7ff; /* 淡い青 */
+    border: 1px solid #99d6ff;
+}
+
+#timeToPriceSection {
+    background-color: #e6ffe6; /* 淡い緑 */
+    border: 1px solid #99ff99;
+}
+
+.common-inputs {
+    padding-bottom: 20px; /* 基本情報セクションのパディング */
 }
