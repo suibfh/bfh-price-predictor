@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ブレヒロ マーケット価格予測ツール</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ブレヒロ マーケット価格予測ツール</h1>
+
+        <div class="input-section">
+            <label for="startDate">取引開始日時:</label>
+            <input type="datetime-local" id="startDate" required>
+
+            <label for="startPrice">取引開始価格 (BPC):</label>
+            <input type="number" id="startPrice" min="0" required>
+
+            <label for="endPrice">取引終了価格 (BPC):</label>
+            <input type="number" id="endPrice" min="0" required>
+
+            <label for="currentPrice">現在の価格 (BPC):</label>
+            <input type="number" id="currentPrice" min="0" required>
+
+            <label for="targetPrice">目標価格 (BPC):</label>
+            <input type="number" id="targetPrice" min="0" required>
+
+            <button onclick="calculatePricePrediction()">予測を計算</button>
+        </div>
+
+        <div class="output-section">
+            <h2>予測結果</h2>
+            <p>取引終了日時: <span id="predictedEndTime"></span></p>
+            <p>目標価格到達予測日時: <span id="targetReachTime"></span></p>
+            <p id="message" class="message"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
