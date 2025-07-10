@@ -54,9 +54,9 @@ button:hover {
 }
 
 .output-section {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
+    margin-top: 20px; /* Adjust margin-top for better spacing */
+    padding-top: 10px;
+    /* border-top: 1px solid #eee; */ /* Remove border-top as hr is used */
 }
 
 .output-section p {
@@ -73,4 +73,13 @@ button:hover {
     color: red;
     font-weight: bold;
     text-align: center;
+    margin-top: 10px; /* Add margin-top for messages */
+}
+
+/* Add style for horizontal rule */
+hr {
+    border: 0;
+    height: 1px;
+    background: #eee;
+    margin: 30px 0;
 }
